@@ -1,0 +1,25 @@
+{
+  "name": "forkify_repo",
+  "version": "1.0.0",
+  "description": "forkify project",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode development",
+    "build":"webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexuko/Forkify.git"
+  },
+  "author": "Alex",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexuko/Forkify/issues"
+  },
+  "homepage": "https://github.com/alexuko/Forkify#readme",
+  "devDependencies": {
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.1"
+  },
+  "dependencies": {}
+}
