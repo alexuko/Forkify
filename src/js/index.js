@@ -41,6 +41,17 @@ elements.searchForm.addEventListener('submit',e =>{
     controlSearch();
 })
 
-
+elements.searchResultPages.addEventListener('click', e => {
+    const btn = e.target.closest('.btn-inline');
+    // console.log(e.target);
+    // console.log(btn);
+    if(btn){
+        const goToPage = parseInt(btn.dataset.goto, 10);
+        searchView.clearResults(); // first clear previous results 
+        searchView.renderResults(state.search.result, goToPage);// render next or prev page results
+        // console.log(goToPage);
+    }
+    
+});
 
 
