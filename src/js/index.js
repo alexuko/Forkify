@@ -243,4 +243,4 @@ elements.recipe.addEventListener('click', e => {
     //console.log(state.recipe);
 });
 
-// window.l = new List();
+window.l = new List();
