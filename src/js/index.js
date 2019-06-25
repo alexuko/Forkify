@@ -8,9 +8,6 @@ import * as listView from './views/listView';
 import * as likesView from './views/likesView';
 import { elements, renderLoader, clearLoader } from './views/base';
 
-
-
-
 /** the global state of the app
  * -search object
  * current recipe object
@@ -19,7 +16,7 @@ import { elements, renderLoader, clearLoader } from './views/base';
  */
 
 const state = {}
-window.state = state;
+// window.state = state;
 
 /**
  * SEARCH CONTROLLER
@@ -61,11 +58,6 @@ elements.searchForm.addEventListener('submit', e => {
     controlSearch();
 });
 
-//TESTING
-// window.addEventListener('load', e => {
-//     e.preventDefault();
-//     controlSearch();
-// })
 
 elements.searchResultPages.addEventListener('click', e => {
     const btn = e.target.closest('.btn-inline');
@@ -83,9 +75,7 @@ elements.searchResultPages.addEventListener('click', e => {
 /**
  * RECIPE CONTROLLER
  */
-// const r = new Recipe(47746);
-// r.getRecipe();
-// console.log(r);
+
 const controlRecipe = async () => {
     // get id from the URL
     const id = window.location.hash.replace('#', '');
@@ -95,8 +85,8 @@ const controlRecipe = async () => {
         recipeView.clearRecipe();
         renderLoader(elements.recipe);
 
-        //highlight selected search 
-        searchView.highlighSelected(id);
+        //Highlight selected search 
+        if(state.search) searchView.highlighSelected(id);
 
         // 2.- Create new recipe object 
         state.recipe = new Recipe(id);
@@ -169,10 +159,6 @@ const controlRecipe = async () => {
  /**
  * LIKE CONTROLLER
  */
-//TESTING
-// state.likes = new Likes();
-// likesView.toggleLikeMenu(state.likes.getNumLikes());
-
 const controlLike = () => {
     if(!state.likes) state.likes = new Likes();
     const currentID = state.recipe.id;
@@ -240,7 +226,5 @@ elements.recipe.addEventListener('click', e => {
         //like controller
         controlLike();
     }
-    //console.log(state.recipe);
 });
 
-window.l = new List();

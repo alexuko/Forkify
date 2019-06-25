@@ -17,8 +17,8 @@ export const highlighSelected = id => {
     resultsArr.forEach(el => {
         el.classList.remove('results__link--active');
     });
-
-    document.querySelector(`.results__link[href*="${id}"]`).classList.add('results__link--active');    
+    document.querySelector(`.results__link[href*="${id}"]`).classList.add('results__link--active');
+    // if(!resultsArr) document.querySelector(`.results__link[href*="${id}"]`).classList.add('results__link--active'); 
 }
 
 /*
